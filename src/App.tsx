@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/*
+ * @Author: linzeguang
+ * @Date: 2022-08-11 15:26:49
+ * @LastEditTime: 2022-08-11 17:50:18
+ * @LastEditors: linzeguang
+ * @Description: App 入口
+ */
 
-function App() {
+import React from 'react'
+import { ReactComponent as ETH } from './ETH.svg'
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ETH />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
