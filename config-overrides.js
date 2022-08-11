@@ -1,29 +1,27 @@
 /*
  * @Author: linzeguang
  * @Date: 2022-08-11 15:44:34
- * @LastEditTime: 2022-08-11 15:53:28
+ * @LastEditTime: 2022-08-11 18:37:01
  * @LastEditors: linzeguang
  * @Description: webpack配置
  */
 
-const {
-  override,
-  addWebpackAlias,
-  addWebpackPlugin,
-} = require("customize-cra");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const ProgressBarPlugin = require("progress-bar-webpack-plugin");
-const path = require("path");
+const { override, addWebpackAlias, addWebpackPlugin } = require('customize-cra')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const webpack = require('webpack')
+const path = require('path')
 
 module.exports = override(
+  addWebpackPlugin(new webpack.DefinePlugin({ __BUILD_TIME__: Date.now() })),
   // alias
   addWebpackAlias({
     // 加载模块的时候，可以使用“@”符号来进行简写啦~
-    "@": path.resolve(__dirname, "./src/"),
+    '@': path.resolve(__dirname, './src/'),
   }),
   // 注意是production环境启动该plugin
-  process.env.NODE_ENV === "production" &&
+  process.env.NODE_ENV === 'production' &&
     addWebpackPlugin(
       new UglifyJsPlugin({
         // 开启打包缓存
@@ -41,10 +39,10 @@ module.exports = override(
             drop_debugger: true,
           },
         },
-      })
+      }),
     ),
   // 判断环境变量ANALYZER参数的值
   process.env.ANALYZER && addWebpackPlugin(new BundleAnalyzerPlugin()),
   // 打包进度条
-  addWebpackPlugin(new ProgressBarPlugin())
-);
+  addWebpackPlugin(new ProgressBarPlugin()),
+)

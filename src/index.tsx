@@ -1,20 +1,27 @@
 /*
  * @Author: linzeguang
  * @Date: 2022-08-11 15:26:49
- * @LastEditTime: 2022-08-11 17:35:27
+ * @LastEditTime: 2022-08-11 18:50:54
  * @LastEditors: linzeguang
  * @Description: 工程入口
  */
 
-import App from './App'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import React from 'react'
+import App from './App'
+
+// 注入foca
+import './store'
+
+import Providers from 'Providers'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <App />
+    <Providers>
+      <App />
+    </Providers>
   </React.StrictMode>,
 )
