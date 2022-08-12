@@ -1,11 +1,3 @@
-/*
- * @Author: linzeguang
- * @Date: 2022-08-11 15:26:49
- * @LastEditTime: 2022-08-11 18:50:54
- * @LastEditors: linzeguang
- * @Description: 工程入口
- */
-
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 

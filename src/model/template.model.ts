@@ -1,10 +1,3 @@
-/*
- * @Author: linzeguang
- * @Date: 2022-08-11 18:22:57
- * @LastEditTime: 2022-08-11 18:47:42
- * @LastEditors: linzeguang
- * @Description: model 示例
- */
 import { defineModel } from 'foca'
 
 export interface TemplateState {
@@ -53,7 +46,7 @@ export const templateModel = defineModel('template', {
   },
   events: {
     onInit() {
-      this.fetchNum()
+      // this.fetchNum()
     },
     onChange(prevState, nextState) {
       console.log('templateModel onChange')

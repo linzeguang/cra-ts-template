@@ -1,10 +1,3 @@
-/*
- * @Author: linzeguang
- * @Date: 2022-08-11 18:14:34
- * @LastEditTime: 2022-08-11 18:38:15
- * @LastEditors: linzeguang
- * @Description: 集成 foca.js 状态管理
- */
 import { engines, Middleware, store } from 'foca'
 import { templateModel } from 'model'
 import { createLogger } from 'redux-logger'
