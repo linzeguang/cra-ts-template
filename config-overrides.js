@@ -1,11 +1,3 @@
-/*
- * @Author: linzeguang
- * @Date: 2022-08-11 15:44:34
- * @LastEditTime: 2022-08-11 18:37:01
- * @LastEditors: linzeguang
- * @Description: webpack配置
- */
-
 const { override, addWebpackAlias, addWebpackPlugin } = require('customize-cra')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
