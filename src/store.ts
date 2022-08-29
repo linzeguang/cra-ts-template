@@ -1,6 +1,7 @@
 import { engines, Middleware, store } from 'foca'
-import { templateModel } from 'model'
 import { createLogger } from 'redux-logger'
+
+import { templateModel } from './stores'
 
 // 中间件
 const middleware: Middleware[] = []

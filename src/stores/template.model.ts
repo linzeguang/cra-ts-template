@@ -26,23 +26,7 @@ export const templateModel = defineModel('template', {
     },
   },
   effects: {
-    async fetchNum() {
-      try {
-        const [num1, num2] = await new Promise((resolve, reject) => {
-          setTimeout(() => {
-            const num1 = Math.floor(Math.random() * 100)
-            const num2 = Math.ceil(Math.random() * 100)
-            num1 > num2
-              ? resolve([Math.floor(Math.random() * 100), Math.ceil(Math.random() * 100)])
-              : reject('num is fail')
-          }, 2000)
-        })
-        this.updateNum1(num1)
-        this.updateNum2(num2)
-      } catch (error) {
-        console.log(error)
-      }
-    },
+    async fetchNum() {},
   },
   events: {
     onInit() {

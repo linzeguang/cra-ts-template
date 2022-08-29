@@ -1,15 +1,17 @@
 import React, { PropsWithChildren } from 'react'
 import { FocaProvider } from 'foca'
-import { ThemeProvider } from 'styled-components'
-import { MotionProvider, Web3Provider } from 'zewide'
-import { theme } from 'zewide'
+import { ModalProvider, MotionProvider, theme, Web3Provider } from 'zewide'
+
+import { ThemeProvider } from '@emotion/react'
 
 const Providers: React.FC<PropsWithChildren> = (props) => {
   return (
     <Web3Provider>
       <FocaProvider>
         <ThemeProvider theme={theme}>
-          <MotionProvider>{props.children}</MotionProvider>
+          <MotionProvider>
+            <ModalProvider>{props.children}</ModalProvider>
+          </MotionProvider>
         </ThemeProvider>
       </FocaProvider>
     </Web3Provider>
